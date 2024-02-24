@@ -1,3 +1,4 @@
+### If you're too lazy, to always google what those pesky openssl commands are...
 ```
 #--- CHECK CERTIFICATE CHAIN VALIDITY AND FIND FITTING KEYS ---#
 USAGE: certcheck.sh [.crt-file|directory|]
