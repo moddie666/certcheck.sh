@@ -3,7 +3,7 @@
 #
 export LC_ALL=C
 ME=$(basename $0)
-USAGE="#--- CHECK CERTIFICATE VALIDITY AND FIND FITTING KEYS ---#
+USAGE="#--- CHECK CERTIFICATE CHAIN VALIDITY AND FIND FITTING KEYS ---#
 USAGE: $ME [.crt-file|directory|]
 
 This script may be used to quickly check wether an SSL certificate
@@ -23,7 +23,7 @@ as the first argument.
 NOTE: Only files with the following extensions are checked
       in 'nothing' or 'directory' modes:
 '*.crt' '*.pem' '*.ca' '*.intermediate' '*.key'
-All in one cerificate+key combo-files should also work.
+All in one cerificate+chain combo-files should also work.
 
 POTENTIAL BUG:
 Intemediate certs, which are also checked for, are assumed to be located
