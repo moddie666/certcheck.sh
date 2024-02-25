@@ -1,5 +1,6 @@
 #!/bin/bash
 #
+# https://github.com/moddie666/certcheck.sh
 #
 
 export LC_ALL=C
