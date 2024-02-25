@@ -65,7 +65,7 @@ read_cert(){
 }
 
 find_chain(){
-    if [ -d "$sslstore" ]
+    if [ ! -d "$sslstore" ]
     then sslstore=""
     fi
     CAFILES=$(find ${sslstore} ${wdir})
