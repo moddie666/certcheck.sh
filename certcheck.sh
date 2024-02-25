@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 #
+
 export LC_ALL=C
 ME=$(basename $0)
 USAGE="#--- CHECK CERTIFICATE CHAIN VALIDITY AND FIND FITTING KEYS ---#
@@ -23,12 +24,9 @@ as the first argument.
 NOTE: Only files with the following extensions are checked
       in 'nothing' or 'directory' modes:
 '*.crt' '*.pem' '*.ca' '*.intermediate' '*.key'
-All in one cerificate+chain combo-files should also work.
+All in one cerificate+chain combo-files should also work."
 
-POTENTIAL BUG:
-Intemediate certs, which are also checked for, are assumed to be located
-in '/sslstore/intermediate' in file mode or <dir>/intermediate in directory
-mode. If these do not exist the dir containing the cert file is checked."
+sslstore="/sslstore/intermediate"
 
 read_multi(){
     mcount="$(grep -c "BEGIN CERTIFICATE--" $1)"
@@ -68,8 +66,7 @@ read_cert(){
 
 find_chain(){
     if [ -d "$sslstore" ]
-    then sslstore="/sslstore/intermediate"
-    else sslstore=""
+    then sslstore=""
     fi
     CAFILES=$(find ${sslstore} ${wdir})
     echo "Looking for matching intermediates: ${sslstore} ${wdir} "
@@ -108,7 +105,7 @@ case $1 in
      -h|--help) echo "$USAGE"
                 exit 0;;
 esac
-sslstore="/sslstore/intermediate"
+
 if [ -f "$1" ]
 then FILES="$@"
 elif [ -d "$1" ]
