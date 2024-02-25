@@ -1,9 +1,10 @@
+### If you're too lazy, to always google what those pesky openssl commands are...
 ```
-#--- CHECK CERTIFICATE VALIDITY AND FIND FITTING KEYS ---#
+#--- CHECK CERTIFICATE CHAIN VALIDITY AND FIND FITTING KEYS ---#
 USAGE: certcheck.sh [.crt-file|directory|]
 
 This script may be used to quickly check wether an SSL certificate
-is valid and what key file it is associated with.
+(chain) is valid and what key file it is associated with.
 
 If -h or --help is the first argument, this help will be printed.
 Otherwise you may give a file, a directory name or nothing
@@ -19,5 +20,5 @@ as the first argument.
 NOTE: Only files with the following extensions are checked
       in 'nothing' or 'directory' modes:
 '*.crt' '*.pem' '*.ca' '*.intermediate' '*.key'
-All in one cerificate+key combo-files should also work.
+All in one cerificate+chain combo-files should also work.
 ```
